@@ -6,6 +6,7 @@
 1. Precisei usar o setState para conseguir ter a resposta do endereço e mostrar na tela. Não conseguifazer por meio do bloc.
 2. Por não ter conseguido fazzer esse link, não consegui salvar os endereços procurados na tela de favoritos
 3. Os widgets contadores da Home Screen não atualizam
+4. Não consegui implementar o armazenamento local
 
 ---
 

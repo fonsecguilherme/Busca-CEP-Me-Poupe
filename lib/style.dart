@@ -9,12 +9,14 @@ class Style {
   static const textSize12 = 12.0;
   static const textSize13 = 13.0;
   static const textSize15 = 15.0;
+  static const textSize16 = 16.0;
   static const textSize18 = 18.0;
   static const textSize19 = 19.0;
   static const textSize27 = 27.0;
   static const textSize60 = 60.0;
 
   static const purpleColor = Color(0XFF6D51FF);
+  static const darkerPurpleColor = Color(0XFF2E179D);
   static const whiteColor = Colors.white;
   static const greyColor = Colors.grey;
   static const darkGreyColor = Color(0XFF595959);
@@ -124,5 +126,12 @@ class Style {
     fontWeight: FontWeight.w400,
     fontSize: textSize15,
     color: blackColor,
+  );
+
+  static const addFavoritesBar = TextStyle(
+    fontFamily: hind,
+    fontWeight: FontWeight.w500,
+    fontSize: textSize16,
+    color: whiteColor,
   );
 }

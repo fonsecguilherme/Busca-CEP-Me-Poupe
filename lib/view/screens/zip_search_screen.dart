@@ -13,9 +13,7 @@ class ZipSearchScreen extends StatefulWidget {
 
 class _ZipSearchState extends State<ZipSearchScreen> {
   final _searchZipController = TextEditingController();
-  // bool _loading = false;
-  // bool _enableField = true;
-  late String _result = '';
+  late String _result = 'Seu endereço irá aparecer aqui!';
 
   @override
   void initState() {
@@ -66,7 +64,6 @@ class _ZipSearchState extends State<ZipSearchScreen> {
                 bottom: 25,
               ),
               child: TextField(
-                autofocus: true,
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.done,
                 controller: _searchZipController,
@@ -74,12 +71,12 @@ class _ZipSearchState extends State<ZipSearchScreen> {
                   labelText: 'Ex: 88330301',
                   floatingLabelBehavior: FloatingLabelBehavior.never,
                   prefixIcon: GestureDetector(
-                      child: const Icon(
-                        CupertinoIcons.search,
-                        color: Style.greyColor,
-                      ),
-                      onTap: () => _searchZip() //! bloc aqui
-                      ),
+                    child: const Icon(
+                      CupertinoIcons.search,
+                      color: Style.greyColor,
+                    ),
+                    onTap: () => _searchZip(),
+                  ),
                   disabledBorder: InputBorder.none,
                   filled: true,
                   fillColor: Style.whiteColor,
@@ -127,11 +124,48 @@ class _ZipSearchState extends State<ZipSearchScreen> {
               _result,
               style: Style.resultNetwork02,
             ),
+            _savedZipsBar()
           ],
         ),
       ),
     );
   }
+
+  Padding _savedZipsBar() => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        child: Container(
+          height: 40,
+          decoration: BoxDecoration(
+            color: Style.darkerPurpleColor,
+            borderRadius: BorderRadius.circular(45.0),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Row(
+                  children: const <Widget>[
+                    Icon(
+                      CupertinoIcons.star,
+                      color: Color(0XFFB4A5FD),
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text(
+                      'Adicionar aos favoritos',
+                      style: Style.addFavoritesBar,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
 
   @override
   void dispose() {

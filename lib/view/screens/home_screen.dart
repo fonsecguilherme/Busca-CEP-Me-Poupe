@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../logic/searchedZipCode/searched_zip_cubit.dart';
-import '../../logic/searchedZipCode/searched_zip_state.dart';
+import '../../logic/searchedZip/searched_zip_cubit.dart';
+import '../../logic/searchedZip/searched_zip_state.dart';
 import '../../style.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,18 +13,26 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => SearchedZipCubit(),
       child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _makeTitleText(),
-            _makeImage(),
-            _makeCounterWidget(),
-            _savedZipsBar(),
-          ],
-        ),
+        child: _buildScreen(),
       ),
     );
   }
+
+  Stack _buildScreen() => Stack(
+        children: [
+          _makeImage(),
+          _makeTitleText(),
+          container(),
+        ],
+      );
+
+  Widget container() => Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          _makeCounterWidget(),
+          _savedZipsBar(),
+        ],
+      );
 
   Padding _makeTitleText() => const Padding(
         padding: EdgeInsets.only(

@@ -1,16 +1,28 @@
 # procura_cep
 
-A new Flutter project.
+* Projeto feito como teste para vaga de desenvolvedor Flutter Jr para o time da Me Poupe!. 
+* Ficaram alguns TODOs para resolver no projeto.
 
-## Getting Started
+1. Precisei usar o setState para conseguir ter a resposta do endereço e mostrar na tela. Não conseguifazer por meio do bloc.
+2. Por não ter conseguido fazzer esse link, não consegui salvar os endereços procurados na tela de favoritos
+3. Os widgets contadores da Home Screen não atualizam
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+# Telas
+> Screenshots da versão mais recente publicada na branch Master
+  * Home Screen
+<p float="left">
+  <img src="https://github.com/fonsecguilherme/Busca-CEP-Me-Poupe/blob/master/assets/screenshots/homeScreen.png" width="350" />
+</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  *Tela de procurar CEP
+<p float="left">
+  <img src="https://github.com/fonsecguilherme/Busca-CEP-Me-Poupe/blob/master/assets/screenshots/zipSearchScreen01.png" width="350" />
+  <img src="https://github.com/fonsecguilherme/Busca-CEP-Me-Poupe/blob/master/assets/screenshots/zipSearchScreen02.png" width="350" />
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Tela de CEPs salvos
+<p float="left">
+  <img src="https://github.com/fonsecguilherme/Busca-CEP-Me-Poupe/blob/master/assets/screenshots/favouriteZipScreen.png" width="350" />
+</p>

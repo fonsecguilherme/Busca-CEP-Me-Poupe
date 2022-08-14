@@ -30,13 +30,13 @@ class _ZipSearchState extends State<ZipSearchScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            _buildSearchBarWidget(context),
+            _buildSearchBarWidget(),
             _buildResultForm()
           ],
         ),
       );
 
-  Container _buildSearchBarWidget(BuildContext newContext) => Container(
+  Container _buildSearchBarWidget() => Container(
         color: Style.purpleColor,
         child: Column(
           children: [
@@ -89,24 +89,6 @@ class _ZipSearchState extends State<ZipSearchScreen> {
           ],
         ),
       );
-
-  void _searchZip() async {
-    final zip = _searchZipController.text;
-
-    final resultZip = await ViaCepNetwork.fetchCep(zip: zip);
-
-    String logradouro = resultZip.logradouro;
-    String bairro = resultZip.bairro;
-    String localidade = resultZip.localidade;
-    String uf = resultZip.uf;
-    String cep = resultZip.cep;
-
-    String endereco = '$logradouro - $bairro - $localidade $uf - CEP $cep ';
-
-    setState(() {
-      _result = endereco;
-    });
-  }
 
   Widget _buildResultForm() {
     return Expanded(
@@ -166,6 +148,24 @@ class _ZipSearchState extends State<ZipSearchScreen> {
           ),
         ),
       );
+
+  void _searchZip() async {
+    final zip = _searchZipController.text;
+
+    final resultZip = await ViaCepNetwork.fetchCep(zip: zip);
+
+    String logradouro = resultZip.logradouro;
+    String bairro = resultZip.bairro;
+    String localidade = resultZip.localidade;
+    String uf = resultZip.uf;
+    String cep = resultZip.cep;
+
+    String endereco = '$logradouro - $bairro - $localidade $uf - CEP $cep ';
+
+    setState(() {
+      _result = endereco;
+    });
+  }
 
   @override
   void dispose() {
